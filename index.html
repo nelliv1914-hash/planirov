@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный планировщик задач на неделю</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка приложения -->
+    <header class="app-header">
+        <div class="header-container">
+            <h1 class="app-title">📅 Личный планировщик задач</h1>
+            <div class="header-info">
+                <div class="progress-section">
+                    <p class="progress-text">Прогресс: <span id="progressText">Выполнено 0 из 0 задач - 0%</span></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <button class="btn btn-danger" id="resetAllBtn">🗑️ Сбросить все задачи</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Недельная доска -->
+    <main class="app-main">
+        <div class="week-container" id="weekContainer">
+            <!-- Колонки дней будут добавлены динамически -->
+        </div>
+    </main>
+
+    <!-- Модальное окно для подтверждения сброса -->
+    <div class="modal" id="resetModal">
+        <div class="modal-content">
+            <h2>Подтвердить сброс</h2>
+            <p>Вы уверены, что хотите удалить все задачи? Это действие нельзя отменить.</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancelResetBtn">Отмена</button>
+                <button class="btn btn-danger" id="confirmResetBtn">Удалить всё</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контейнер для уведомлений -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
